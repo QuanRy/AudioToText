@@ -1,0 +1,3 @@
+В терминале пропишите эту команду:
+
+pip install -r res/requirements.txt     

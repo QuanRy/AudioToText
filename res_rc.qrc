@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>../icons/analytics.svg</file>
+    <file>../icons/back_arrow.svg</file>
+    <file>../icons/file_folder.svg</file>
+    <file>../icons/help_question.svg</file>
+    <file>../icons/info.svg</file>
+    <file>../icons/mic_on.svg</file>
+    <file>../icons/record_btn.svg</file>
+    <file>../icons/save.svg</file>
+  </qresource>
+</RCC>
