@@ -30,10 +30,36 @@
 
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Язык программирования 
 #### •  Python (версия: 3.11)
+
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IDE:
 #### •  PyCharm Community Edition (версия: 2023.2.1)
+
 ### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Модель:
 #### •  Модель vosk-model-ru-0.22
 
-
+## 5.	Как выглядит программа?
+<div id="header" align="center">
+  <img src="https://github.com/QuanRy/AudioToText/blob/main/img_for_git/main_window.png" width="700"/>
+  <p> Рисунок 1 – Стартовое окно </p> 
+</div>
+<div id="header" align="center">
+  <img src="https://github.com/QuanRy/AudioToText/blob/main/img_for_git/info_window.png" width="500"/>
+  <p> Рисунок 2 – Окно со справочной информацией </p> 
+</div>
+<div id="header" align="center">
+  <img src="https://github.com/QuanRy/AudioToText/blob/main/img_for_git/transcrib_from_file_window.png" width="700"/>
+  <p> Рисунок 3 – Окно транскрибации готового файла </p> 
+</div>
+<div id="header" align="center">
+  <img src="https://github.com/QuanRy/AudioToText/blob/main/img_for_git/transcrib_from_real_speech.png" width="700"/>
+  <p> Рисунок 4 – Окно транскрибации при надиктовке </p> 
+</div>
+<div id="header" align="center">
+  <img src="https://github.com/QuanRy/AudioToText/blob/main/img_for_git/example_transcrib_from_file.png" width="700"/>
+  <p> Рисунок 5 – Пример транскрибации из готового файла </p> 
+</div>
+<div id="header" align="center">
+  <img src="https://github.com/QuanRy/AudioToText/blob/main/img_for_git/transcrib_from_real_speech.png" width="700"/>
+  <p> Рисунок 6 – Пример транскрибации из прямой речи </p> 
+</div>
 
