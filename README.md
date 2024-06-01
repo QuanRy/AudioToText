@@ -59,7 +59,46 @@
   <p> Рисунок 5 – Пример транскрибации из готового файла </p> 
 </div>
 <div id="header" align="center">
-  <img src="https://github.com/QuanRy/AudioToText/blob/main/img_for_git/transcrib_from_real_speech.png" width="700"/>
+  <img src="https://github.com/QuanRy/AudioToText/blob/main/img_for_git/example_transcib_from_speech.png" width="700"/>
   <p> Рисунок 6 – Пример транскрибации из прямой речи </p> 
+</div>
+
+
+## 6.	Какие результаты были получены?
+
+<div id="header" align="center">
+  <img src="https://github.com/QuanRy/AudioToText/blob/main/img_for_git/Test_table_my_prog.png" width="1000"/>
+  <p> Рисунок 7 – Сравнительная таблица результатов работы </p> 
+</div>
+
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; *Пояснение:*
+
+:white_check_mark: Процент сокращения времени – показатель, насколько транскрибация быстрее длительности файла.
+
+:white_check_mark: Процент несовпадения – показатель отношения расстояния Левенштейна к кол-ву символов в файле.
+
+:white_check_mark: В качестве метрики описывающей точность работы, использовалось расстояние Левенштейна - это метрика, показывающая минимальное количество редакторских операций (вставка, удаление, замена символов) необходимых, чтобы превратить транскрибированный текст в оригинальный (Эталонный).
+
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; В итоге были протестированы различные файлы, как по длительности, начиная короткими в десяток секунд аудио, заканчивая аудио в 40 минут, так и по содержанию, измеряемому в кол-ве символов. 
+
+
+
+## 7.	Как запустить программу?
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Чтобы запустить программу вам потребуется запустить файл main.py, расположенный по пути "AudioToText/scripts/main.py" в любо обработчике кода Python, главное, чтобы этот обработчик поддерживал расширения.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :heavy_exclamation_mark: Перед запуском main.py **настоятельно рекомендуется** прочитать инструкцию по установке дополнительных библиотек, необходимых для успешного функционирования данной программы.
+
+Для этого вы можете перейти по пути: "AudioToText/res/как ставить библиотеки.txt" или следовать следующим шагам:
+
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1.  Запустите любую IDE поддерживающию язык программирования Python и его библиотеки (в нашем случае был использован PyCharm Community Edition 2023.2.1)
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.  Откройте терминал IDE и впишите следующую команду *pip install -r res/requirements.txt* (это установит все необходимые библиотеки для запуска приложения) / установите библиотеки вручную из списка предложенного [тут](https://github.com/QuanRy/AudioToText/tree/main?tab=readme-ov-file#-библиотеки)
+#### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. Запустите файл main.py и у вас запустится [следующее окно](https://github.com/QuanRy/AudioToText/tree/main?tab=readme-ov-file#5как-выглядит-программа)
+
+<div id="header" align="ri">
+  <img src="https://raw.githubusercontent.com/trinib/trinib/a5f17399d881c5651a89bfe4a621014b08346cf0/images/marquee.svg" width="1000"/>
+</div>
+
+<div id="header" align="center">
+  <img src="https://raw.githubusercontent.com/trinib/trinib/82213791fa9ff58d3ca768ddd6de2489ec23ffca/images/footer.svg" width="1000"/>
 </div>
 
