@@ -54,13 +54,23 @@
   <img src="https://github.com/QuanRy/AudioToText/blob/main/img_for_git/transcrib_from_real_speech.png" width="700"/>
   <p> Рисунок 4 – Окно транскрибации при надиктовке </p> 
 </div>
+
 <div id="header" align="center">
   <img src="https://github.com/QuanRy/AudioToText/blob/main/img_for_git/example_transcrib_from_file.png" width="700"/>
-  <p> Рисунок 5 – Пример транскрибации из готового файла </p> 
+  <p> Рисунок 5 – Пример транскрибации из готового файла</p> 
 </div>
+<div id="header" align="center">
+  <img src="https://github.com/QuanRy/AudioToText/blob/main/img_for_git/Гифка%20транскрибации.gif" width="700"/>
+  <p> GIF 1 – Пример процесса транскрибации</p>
+</div>
+
 <div id="header" align="center">
   <img src="https://github.com/QuanRy/AudioToText/blob/main/img_for_git/example_transcib_from_speech.png" width="700"/>
   <p> Рисунок 6 – Пример транскрибации из прямой речи </p> 
+</div>
+<div id="header" align="center">
+  <img src="https://github.com/QuanRy/AudioToText/blob/main/img_for_git/Гифка%20надиктовки.gif" width="700"/>
+  <p> GIF 2 – Пример процесса транскрибации из прямой речи </p>
 </div>
 
 
