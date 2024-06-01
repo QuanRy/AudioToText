@@ -1,13 +1,20 @@
 <h1 align="center"> :sound: AudioToText :sound: </h1>
 
 Ссылки:
+
 [1.	Для чего эта программа?](https://github.com/QuanRy/AudioToText/tree/main#1для-чего-эта-программа)
-[2.	Какие форматы принимаются на вход?](https://github.com/QuanRy/AudioToText/tree/main#2какие-форматы-принимаются-на-вход)
-[3.	Какая модель используется для распознавания?](https://github.com/QuanRy/AudioToText/tree/main#3какая-модель-используется-для-распознавания)
-[4.	Какие инструменты были использованы?](https://github.com/QuanRy/AudioToText/tree/main#4какие-инструменты-были-использованы)
-[5.	Как выглядит программа?](https://github.com/QuanRy/AudioToText/tree/main#5как-выглядит-программа)
-[6.	Какие результаты были получены?](https://github.com/QuanRy/AudioToText/tree/main#6какие-результаты-были-получены)
-[7.	Как запустить программу?](https://github.com/QuanRy/AudioToText/tree/main#7как-запустить-программу)
+
+&nbsp;&nbsp;&nbsp;&nbsp;[2.	Какие форматы принимаются на вход?](https://github.com/QuanRy/AudioToText/tree/main#2какие-форматы-принимаются-на-вход)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[3.	Какая модель используется для распознавания?](https://github.com/QuanRy/AudioToText/tree/main#3какая-модель-используется-для-распознавания)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[4.	Какие инструменты были использованы?](https://github.com/QuanRy/AudioToText/tree/main#4какие-инструменты-были-использованы)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[5.	Как выглядит программа?](https://github.com/QuanRy/AudioToText/tree/main#5как-выглядит-программа)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[6.	Какие результаты были получены?](https://github.com/QuanRy/AudioToText/tree/main#6какие-результаты-были-получены)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[7.	Как запустить программу?](https://github.com/QuanRy/AudioToText/tree/main#7как-запустить-программу)
 
 ## 1.	Для чего эта программа?
 
