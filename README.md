@@ -10,3 +10,30 @@
 #### •	Аудио: MP3, FLAC, WAV, AAC, VOC, WMA, ALAC :sound:
 #### •	Видео: MP4, AVI, MOV, WMV, MKV, FLV :movie_camera:
 #### •	Прямую речь в микрофон :microphone:
+
+## 3.	Какая модель используется для распознавания?
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; В качестве модели для распознавания русской речи используется модель от компании Alpha Cephei - Vosk. А именно **Vosk-ru-0.22**. :wrench:
+
+Обучающий набор данных:
+#### •  Набор данных "OpenSTT" от проекта Silero, 
+#### •  **2,3 ТБ данных**,
+#### •  **20 000 часов аудио** на русском языке (в формате .WAV)
+
+## 4.	Какие инструменты были использованы?
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Библиотеки:
+#### •  PySide6 и PyQt6 (версия: 6.4.2)
+#### •  Vosk (версия: 0.3.45)
+#### •  NLTK (версия: 3.8.1)
+#### •  PyAudio (версия: 0.25.1)
+#### •  PyDub (версия: 0.2.14)
+#### •  MoviePy (версия: 1.0.3)
+
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Язык программирования 
+#### •  Python (версия: 3.11)
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; IDE:
+#### •  PyCharm Community Edition (версия: 2023.2.1)
+### &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Модель:
+#### •  Модель vosk-model-ru-0.22
+
+
+
