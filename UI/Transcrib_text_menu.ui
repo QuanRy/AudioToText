@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog_audio_file_to_text</class>
+ <widget class="QDialog" name="Dialog_audio_file_to_text">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>760</width>
+    <height>671</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>760</width>
+    <height>671</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>760</width>
+    <height>671</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(81, 0, 135, 255), stop:0.427447 rgba(41, 61, 132, 235), stop:1 rgba(155, 79, 165, 255));
+font-family: Corbel;</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
+  <widget class="QLineEdit" name="lineEdit_way_open_file">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>110</y>
+     <width>421</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="acceptDrops">
+    <bool>true</bool>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Выберите файл, который хотите перевести в текст&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgba(255, 255, 255, 200); /* Прозрачный белый текст */
+font-size: 16pt;
+background-color: rgba(255, 255, 255, 30);
+border: 1px solid rgba(255, 255, 255, 40);
+border-radius: 20px;
+width: 230px;
+height: 50px;
+</string>
+   </property>
+   <property name="text">
+    <string>    Выберите файл</string>
+   </property>
+   <property name="frame">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_choose_file">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>110</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Нажмите, чтобы запустить процесс перевода вашего файла в текст&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton{
+color: rgb(255, 255, 255);
+font-size: 16pt;
+background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255,255,255,40);
+border-radius:20px;
+width: 230;
+height: 50;
+}
+QPushButton:hover{
+background-color:rgba(255,255,255,30);
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,70);
+}</string>
+   </property>
+   <property name="text">
+    <string> Выбрать</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/file_folder.svg</normaloff>../icons/file_folder.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_audio_to_text_slogan">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>30</y>
+     <width>481</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Corbel</family>
+     <pointsize>25</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font-weight: bold;
+font-size: 25pt;
+background-color: none;
+border: none; </string>
+   </property>
+   <property name="text">
+    <string>Аудио или видео в текст - легко!</string>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+   <property name="openExternalLinks">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_file_to_translate_info">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>80</y>
+     <width>391</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Corbel</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font-size: 14pt;
+background-color: none;
+border: none;
+</string>
+   </property>
+   <property name="text">
+    <string>Файл который необходимо перевести в текст:</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_way_save_file">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>600</y>
+     <width>421</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="acceptDrops">
+    <bool>true</bool>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Выберите, куда сохранить текстовый файл перевода&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgba(255, 255, 255, 200); /* Прозрачный белый текст */
+font-size: 16pt;
+background-color: rgba(255, 255, 255, 30);
+border: 1px solid rgba(255, 255, 255, 40);
+border-radius: 20px;
+width: 230px;
+height: 50px;
+</string>
+   </property>
+   <property name="text">
+    <string>    Выберите файл</string>
+   </property>
+   <property name="frame">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_save_as__info">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>570</y>
+     <width>391</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Corbel</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font-size: 14pt;
+background-color: none;
+border: none;
+</string>
+   </property>
+   <property name="text">
+    <string>Сохранить перевод в:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_save_files">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>600</y>
+     <width>201</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Нажмите, чтобы сохранить перевод вашего файла &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton{
+color: rgb(255, 255, 255);
+font-size: 16pt;
+background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255,255,255,40);
+border-radius:20px;
+width: 230;
+height: 50;
+}
+QPushButton:hover{
+background-color:rgba(255,255,255,30);
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,70);
+}</string>
+   </property>
+   <property name="text">
+    <string> Сохранить</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/save.svg</normaloff>../icons/save.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>25</width>
+     <height>25</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEdit_field_to_text">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>170</y>
+     <width>641</width>
+     <height>391</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Здесь отображается текстовый перевод вашего аудио&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgba(255, 255, 255, 200); /* Прозрачный белый текст */
+font-size: 12pt;
+background-color: rgba(255, 255, 255, 30);
+border: 1px solid rgba(255, 255, 255, 40);
+border-radius: 20px;
+width: 230px;
+height: 50px;
+</string>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Corbel'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_back_to_main">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>51</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Нажмите, чтобы вернуться в главное меню&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton{
+color: rgb(255, 255, 255);
+font-size: 16pt;
+background-color:rgba(255,255,255,30);
+border: 1px solid rgba(255,255,255,40);
+border-radius:20px;
+width: 230;
+height: 50;
+border: 1px solid rgba(255,255,255,40);
+border-radius:25px;
+}
+QPushButton:hover{
+background-color:rgba(255,255,255,30);
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,70);
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../icons/back_arrow.svg</normaloff>../icons/back_arrow.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>35</width>
+     <height>35</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_every_audio_to_text_7">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>20</y>
+     <width>41</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Corbel</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: white;
+font-size: 14pt;
+background-color: none;
+border: none;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../icons/img/smiles/audio_to_text_45.png</pixmap>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+   <property name="openExternalLinks">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../res/res_rc.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -1,0 +1,12 @@
+команды.txt
+
+venv
+.venv
+saves
+__pycache__
+
+
+.idea
+.env
+model
+icons

@@ -1,0 +1,7 @@
+moviepy
+pydub
+vosk
+nltk
+numpy
+PySide6
+pyaudio
