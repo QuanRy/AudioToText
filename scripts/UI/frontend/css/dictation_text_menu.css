@@ -126,6 +126,9 @@ body {
 
 /* Кнопка назад */
 .back-btn {
+    position: absolute;
+    /* top: 10px; */
+    left: 10px;
     width: 51px;
     height: 51px;
     border-radius: 25px;
@@ -133,6 +136,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.4);
     cursor: pointer;
 }
+
 
 .back-btn img {
     width: 35px;
