@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AudioToText — Транскрибация</title>
+    <link rel="icon" type="image/png" href="../../../../icons/img/smiles/micro_40.png">
+    <link rel="stylesheet" href="../css/transcrib_text_menu.css">
+</head>
+<body>
+
+<div class="transcribe-app">
+
+    <!-- Кнопка назад -->
+    <button class="back-btn" title="Вернуться в главное меню">
+        <img src="../../../../icons/back_arrow.svg" alt="back">
+    </button>
+
+    <!-- Заголовок / Слоган -->
+    <h1 class="slogan">Аудио или видео в текст — легко!</h1>
+    <label class="file-info">Файл, который необходимо преобразовать в текст:</label>
+
+    <!-- Поле выбора файла -->
+    <div class="file-row">
+        <input type="text" class="file-input" placeholder="Выберите файл">
+        <button class="choose-file-btn">
+            <img src="../../../../icons/file_folder.svg" alt="">
+            Выбрать
+        </button>
+    </div>
+
+    <!-- Текстовое поле с результатом -->
+    <textarea class="text-field" placeholder="Здесь появится распознанный текст..."></textarea>
+
+    <!-- Сохранение -->
+    <label class="save-info">Сохранить преобразованный файл как:</label>
+    <div class="file-row">
+        <input type="text" class="file-input" placeholder="Путь для сохранения">
+        <button class="save-file-btn">
+            <img src="../../../../icons/save.svg" alt="">
+            Сохранить
+        </button>
+    </div>
+
+    <!-- Иконка справа -->
+    <img class="audio-icon" src="../../../../icons/img/smiles/audio_to_text_45.png" alt="">
+
+</div>
+
+</body>
+</html>

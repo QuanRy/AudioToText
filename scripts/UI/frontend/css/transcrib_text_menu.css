@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    font-family: Corbel, sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(
+        135deg,
+        rgba(81, 0, 135, 1),
+        rgba(41, 61, 132, 0.92),
+        rgba(155, 79, 165, 1)
+    );
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transcribe-app {
+    width: 1100px;
+    height: 800px;
+    position: relative;
+    padding: 20px 30px;
+}
+
+/* Кнопка назад */
+.back-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 51px;
+    height: 51px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.4);
+    cursor: pointer;
+}
+
+.back-btn img {
+    width: 35px;
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.6);
+}
+
+/* Слоган */
+.slogan {
+    text-align: center;
+    font-size: 25pt;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Инфо о файле */
+.file-info, .save-info {
+    display: block;
+    font-size: 14pt;
+    margin: 10px 0 6px 0;
+}
+
+/* Ряд с input + кнопка */
+.file-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.file-input {
+    flex: 1;
+    padding: 10px 15px;
+    font-size: 12pt;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.4);
+    background-color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.9);
+}
+
+.file-input::placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+/* Кнопки */
+.choose-file-btn, .save-file-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16pt;
+    padding: 10px 20px;
+    color: white;
+    background: rgba(255,255,255,0.18);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.choose-file-btn img, .save-file-btn img {
+    width: 25px;
+    height: 25px;
+}
+
+.choose-file-btn:hover, .save-file-btn:hover {
+    background: rgba(255,255,255,0.28);
+}
+
+.choose-file-btn:active, .save-file-btn:active {
+    background: rgba(255,255,255,0.4);
+}
+
+/* Текстовое поле для транскрибации */
+.text-field {
+    width: 100%;
+    height: 391px;
+    font-size: 12pt;
+    padding: 10px 15px;
+    background-color: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    color: rgba(255,255,255,0.9);
+    resize: none;
+    margin-bottom: 15px;
+}
+
+/* Скроллбар */
+.text-field::-webkit-scrollbar {
+    width: 25px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 20px;
+}
+
+.text-field::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* Иконка справа */
+.audio-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+}
