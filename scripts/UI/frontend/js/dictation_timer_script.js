@@ -13,17 +13,26 @@ document.addEventListener('DOMContentLoaded', async () => {
     let isRecording = false;
 
     /* =======================
-       ТАЙМЕР + КНОПКА Record
+       ТЕКСТ (FINAL / PARTIAL)
+    ======================= */
+    let finalText = "";
+    let partialText = "";
+
+    const updateTextField = () => {
+        textField.value = finalText + (partialText ? " " + partialText : "");
+    };
+
+    /* =======================
+       ТАЙМЕР
     ======================= */
     let timer = null;
     let startTime = 0;
     let elapsedBeforePause = 0;
 
     const formatTime = (ms) => {
-        let totalSeconds = Math.floor(ms / 1000);
-        let minutes = Math.floor(totalSeconds / 60);
-        let seconds = totalSeconds % 60;
-
+        const totalSeconds = Math.floor(ms / 1000);
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
         const pad = (n) => n.toString().padStart(2, '0');
         return `${pad(Math.floor(minutes / 60))}:${pad(minutes % 60)}:${pad(seconds)}`;
     };
@@ -31,8 +40,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const startTimer = () => {
         startTime = Date.now();
         timer = setInterval(() => {
-            const now = Date.now();
-            const elapsed = elapsedBeforePause + (now - startTime);
+            const elapsed = elapsedBeforePause + (Date.now() - startTime);
             timerDisplay.textContent = formatTime(elapsed);
         }, 10);
     };
@@ -73,9 +81,18 @@ document.addEventListener('DOMContentLoaded', async () => {
                 body: formData
             });
             const data = await res.json();
-            if (data.text) {
-                textField.value += data.text + ' ';
+
+            if (data.type === "partial") {
+                partialText = data.text;
+                updateTextField();
             }
+
+            if (data.type === "final" && data.text) {
+                finalText += data.text + " ";
+                partialText = "";
+                updateTextField();
+            }
+
         } catch (e) {
             console.error("Ошибка отправки:", e);
         }
@@ -122,12 +139,14 @@ document.addEventListener('DOMContentLoaded', async () => {
             recordBtn.querySelector('img').src = defaultIcon;
             infoField.value = "Для продолжения записи нажмите на кнопку...";
 
-            // отправляем остаток (< 5 сек)
             if (audioBuffer.length > 0) {
                 const pcm16 = floatTo16BitPCM(new Float32Array(audioBuffer));
                 audioBuffer = [];
                 await sendChunk(pcm16);
             }
+
+            // СБРОС recognizer
+            await fetch("http://127.0.0.1:9000/reset", { method: "POST" });
 
             processor.disconnect();
             input.disconnect();

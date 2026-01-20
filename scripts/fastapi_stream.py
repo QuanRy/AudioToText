@@ -25,7 +25,20 @@ async def transcribe_chunk(file: UploadFile = File(...)):
 
     if recognizer.AcceptWaveform(audio_bytes):
         result = json.loads(recognizer.Result())
-        return {"text": result.get("text", "")}
+        return {
+            "type": "final",
+            "text": result.get("text", "")
+        }
     else:
         partial = json.loads(recognizer.PartialResult())
-        return {"text": partial.get("partial", "")}
+        return {
+            "type": "partial",
+            "text": partial.get("partial", "")
+        }
+
+@app.post("/reset")
+async def reset_recognizer():
+    global recognizer
+    recognizer = KaldiRecognizer(model, 16000)
+    recognizer.SetWords(True)
+    return {"status": "ok"}
