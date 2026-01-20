@@ -21,6 +21,11 @@ from model.wav_to_text import start_model
 
     # Загрузка модели
 model_path = "../model/vosk-model-small-ru-0.22"   # малая модель
+
+print("Current directory:", os.getcwd())
+print("Model path:", model_path)
+print("Model exists:", os.path.exists(model_path))
+
 model = Model(model_path)
 
 # --------------------------------------------- ТРАНСКРИБАЦИЯ ----------------------------------------------------------
