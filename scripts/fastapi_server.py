@@ -45,7 +45,7 @@ async def transcribe(file: UploadFile = File(...)):
         }
 
     except Exception as e:
-        print("❌ ОШИБКА:", e)
+        print(" ОШИБКА:", e)
         return {
             "status": "error",
             "message": str(e)
