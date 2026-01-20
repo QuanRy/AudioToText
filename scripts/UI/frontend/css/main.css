@@ -59,7 +59,7 @@ body {
 .info {
     display: flex;
     justify-content: space-between;
-    margin: 20px 80px;
+    margin: 20px 55px;
 }
 
 .info-block {
