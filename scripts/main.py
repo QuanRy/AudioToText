@@ -203,7 +203,7 @@ class TranscribTextMenu(QDialog):
                         transcribed_text_temp_path = start_model(output_audio_filepath)
 
                         # Устанавливаем прочитанный текст в поле для текста
-                        with open(transcribed_text_temp_path, "r") as file:
+                        with open(transcribed_text_temp_path, "r", encoding="utf-8") as file:
                             text_to_text_field = file.read()
 
                         self.textEdit_field_to_text.setPlainText(text_to_text_field)
@@ -242,7 +242,7 @@ class TranscribTextMenu(QDialog):
                 transcribed_text_temp_path = start_model(output_audio_filepath)
 
                 # Устанавливаем прочитанный текст в поле для текста
-                with open(transcribed_text_temp_path, "r") as file:
+                with open(transcribed_text_temp_path, "r", encoding="utf-8") as file:
                     text_to_text_field = file.read()
                 self.textEdit_field_to_text.setPlainText(text_to_text_field)
 

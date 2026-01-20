@@ -69,7 +69,7 @@ def start_model(audio_file_path):         # запуск модели
     text = transcribe_audio(audio_file_path)
     text_with_punctuation = add_punctuation_and_capitalize(text)
 
-    with open(transcribed_text_temp_path, "w") as text_file:
+    with open(transcribed_text_temp_path, "w", encoding="utf-8") as text_file:
         text_file.write(text_with_punctuation)
         print("Текст успешно сохранен в файл 'transcribed_text_temp.txt'.")
 

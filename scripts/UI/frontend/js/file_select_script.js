@@ -1,20 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const validExtensions = [
-        '.wav', '.mp3', '.mp4', '.avi', '.mov', '.mkv', 
-        '.flac', '.aac', '.wma', '.wmv', '.alac', '.ogg', 
+        '.wav', '.mp3', '.mp4', '.avi', '.mov', '.mkv',
+        '.flac', '.aac', '.wma', '.wmv', '.alac', '.ogg',
         '.aiff', '.dsd', '.webm', '.flv'
     ];
 
     const chooseFileBtn = document.querySelector('.choose-file-btn');
     const fileInputField = document.querySelector('.file-input');
+    const textArea = document.querySelector('.text-field');
 
     if (!chooseFileBtn || !fileInputField) return;
 
-    // Проверка, что файл допустимый
+    // Проверка расширения файла
     const isValidFile = (fileName) => {
         const ext = fileName.slice(fileName.lastIndexOf('.')).toLowerCase();
         return validExtensions.includes(ext);
+    };
+
+    // ===== ВЫЗОВ FASTAPI =====
+    const startTranscription = (file) => {
+        const formData = new FormData();
+        formData.append("file", file);
+
+        if (textArea) {
+            textArea.value = "Идёт транскрибация... ⏳";
+        }
+
+        fetch("http://127.0.0.1:8000/transcribe", {
+            method: "POST",
+            body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.text) {
+                if (textArea) textArea.value = data.text;
+            } else {
+                alert("Ошибка транскрибации");
+                if (textArea) textArea.value = "";
+            }
+        })
+        .catch(() => {
+            alert("Не удалось подключиться к серверу");
+            if (textArea) textArea.value = "";
+        });
     };
 
     // Открытие диалога выбора файла
@@ -28,46 +57,53 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!file) return;
 
             const fileName = file.name;
+
             if (!isValidFile(fileName)) {
-                alert("Внимание! Выбранный файл не является аудио или видео формата. Пожалуйста, выберите другой файл!");
+                alert(
+                    "Внимание! Выбранный файл не является аудио или видео формата.\n" +
+                    "Пожалуйста, выберите другой файл!"
+                );
                 return;
             }
 
-            // Ставим путь в поле
+            // Отображаем имя файла
             fileInputField.value = fileName;
 
-            // После выбора файла сразу можно предложить начать транскрибацию
-            const start = confirm("Начать процесс транскрибации выбранного файла?");
+            const start = confirm(
+                "Начать процесс транскрибации выбранного файла?"
+            );
+
             if (start) {
                 console.log("Запуск процесса транскрибации для файла:", fileName);
-                // Здесь можно вызвать функцию транскрибации
+                startTranscription(file);
             }
         };
 
         fileSelector.click();
     };
 
-    // Клик по кнопке "Выбрать"
+    // Кнопка "Выбрать"
     chooseFileBtn.addEventListener('click', () => {
         const currentFile = fileInputField.value.trim();
 
         if (!currentFile || !isValidFile(currentFile)) {
-            // Если поле пустое или файл неверный — открываем диалог выбора
             openFileDialog();
         } else {
-            // Если поле уже заполнено корректным файлом — спрашиваем о запуске транскрибации
-            const start = confirm("Начать процесс транскрибации выбранного файла?");
+            const start = confirm(
+                "Начать процесс транскрибации выбранного файла?"
+            );
+
             if (start) {
                 console.log("Запуск процесса транскрибации для файла:", currentFile);
-                // Здесь можно вызвать функцию транскрибации
+                // ⚠️ нет File-объекта → открываем диалог заново
+                openFileDialog();
             } else {
-                // Можно предложить выбрать другой файл
                 openFileDialog();
             }
         }
     });
 
-    // Клик по полю input
+    // Клик по input — всегда открываем диалог
     fileInputField.addEventListener('click', () => {
         openFileDialog();
     });
