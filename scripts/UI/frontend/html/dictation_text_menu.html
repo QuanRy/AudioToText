@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>DictationToText</title>
+    <link rel="icon" type="image/png" href="../../../../icons/img/smiles/micro_40.png">
+    <link rel="stylesheet" href="../css/dictation_text_menu.css">
+</head>
+<body>
+
+<div class="transcribe-app">
+
+    <!-- Заголовок -->
+    <!-- Заголовок / Слоган -->
+    <div class="slogan-container">
+        <h1 class="slogan">Ваш прекрасный голос - наш текст!</h1>
+        <img class="audio-icon" src="../../../../icons/img/smiles/micro_40.png" alt="">
+    </div>  
+
+    <!-- Информационное поле + кнопка записи + таймер -->
+    <div class="file-row">
+        <input type="text" class="file-input info-field" placeholder="Для начала нажмите кнопку справа">
+        <div class="timer">00:00:00</div>
+        <button class="record-btn">
+            <img src="../../../../icons/record_btn.svg" class="icon">
+        </button>
+    </div>
+
+    <!-- Текстовое поле для транскрибации -->
+    <textarea class="text-field" placeholder="Здесь будет отображаться транскрибированный текст..."></textarea>
+
+    <!-- Путь сохранения + кнопка -->
+    <div class="file-row">
+        <input type="text" class="file-input save-path" placeholder="Выберите путь для сохранения">
+        <button class="save-file-btn">
+            <img src="../../../../icons/save.svg" class="icon">
+            Сохранить
+        </button>
+    </div>
+
+</div>
+
+</body>
+</html>

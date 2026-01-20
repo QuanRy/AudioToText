@@ -59,7 +59,7 @@ body {
 .file-info, .save-info {
     display: block;
     font-size: 14pt;
-    margin: 10px 0 6px 0;
+    margin: 20px 0 6px 0;
 }
 
 /* Ряд с input + кнопка */
@@ -141,9 +141,29 @@ body {
 
 /* Иконка справа */
 .audio-icon {
-    position: absolute;
     top: 20px;
     right: 20px;
+    width: 45px;
+    height: 45px;
+}
+
+/* Контейнер для слогана и иконки */
+.slogan-container {
+    display: flex;
+    align-items: center;      
+    justify-content: center;  
+    gap: 15px;               
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.slogan-container .slogan {
+    font-size: 25pt;
+    font-weight: bold;
+    margin: 0;
+}
+
+.slogan-container .audio-icon {
     width: 45px;
     height: 45px;
 }
