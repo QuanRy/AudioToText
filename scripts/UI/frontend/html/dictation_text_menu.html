@@ -34,10 +34,11 @@
     <textarea class="text-field" placeholder="Здесь будет отображаться транскрибированный текст..."></textarea>
 
     <!-- Путь сохранения + кнопка -->
-    <div class="file-row">
-        <input type="text" class="file-input save-path" placeholder="Выберите путь для сохранения">
-        <button class="save-file-btn">
-            <img src="../../../../icons/save.svg" class="icon">
+    <label class="save-info">Сохранить преобразованный файл как:</label>
+    <div class="file-row save-row">
+        <input type="text" class="file-input save-path-field" placeholder="Путь для сохранения">
+        <button class="save-btn">
+            <img src="../../../../icons/save.svg" alt="">
             Сохранить
         </button>
     </div>
@@ -45,6 +46,8 @@
 </div>
 
 <script src="../js/back_btn_script.js"></script>
+<script src="../js/dictation_timer_script.js"></script>
+<script src="../js/file_save_script.js"></script>
 
 </body>
 </html>

@@ -28,7 +28,6 @@ body {
 /* Кнопка назад */
 .back-btn {
     position: absolute;
-    /* top: 10px; */
     left: 10px;
     width: 51px;
     height: 51px;
@@ -55,15 +54,15 @@ body {
     margin-bottom: 10px;
 }
 
-/* Инфо о файле */
+/* Инфо о файле и сохранении */
 .file-info, .save-info {
     display: block;
     font-size: 14pt;
     margin: 20px 0 6px 0;
 }
 
-/* Ряд с input + кнопка */
-.file-row {
+/* Ряды с input + кнопка */
+.file-row, .save-row {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -84,8 +83,8 @@ body {
     color: rgba(255,255,255,0.6);
 }
 
-/* Кнопки */
-.choose-file-btn, .save-file-btn {
+/* Кнопки выбора файла */
+.choose-file-btn {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -99,16 +98,44 @@ body {
     transition: all 0.2s ease;
 }
 
-.choose-file-btn img, .save-file-btn img {
+.choose-file-btn img {
     width: 25px;
     height: 25px;
 }
 
-.choose-file-btn:hover, .save-file-btn:hover {
+.choose-file-btn:hover {
     background: rgba(255,255,255,0.28);
 }
 
-.choose-file-btn:active, .save-file-btn:active {
+.choose-file-btn:active {
+    background: rgba(255,255,255,0.4);
+}
+
+/* Кнопка сохранения */
+.save-row .save-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16pt;
+    padding: 10px 20px;
+    color: white;
+    background: rgba(255,255,255,0.18);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.save-row .save-btn img {
+    width: 25px;
+    height: 25px;
+}
+
+.save-row .save-btn:hover {
+    background: rgba(255,255,255,0.28);
+}
+
+.save-row .save-btn:active {
     background: rgba(255,255,255,0.4);
 }
 
@@ -141,8 +168,6 @@ body {
 
 /* Иконка справа */
 .audio-icon {
-    top: 20px;
-    right: 20px;
     width: 45px;
     height: 45px;
 }
@@ -150,9 +175,9 @@ body {
 /* Контейнер для слогана и иконки */
 .slogan-container {
     display: flex;
-    align-items: center;      
-    justify-content: center;  
-    gap: 15px;               
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
     margin-top: 20px;
     margin-bottom: 15px;
 }
