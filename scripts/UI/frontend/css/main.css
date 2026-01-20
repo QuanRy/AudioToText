@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+    font-family: Corbel, sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(
+        135deg,
+        rgba(81, 0, 135, 1),
+        rgba(41, 61, 132, 0.92),
+        rgba(155, 79, 165, 1)
+    );
+    color: white;
+}
+
+.app {
+    width: 947px;
+    height: 843px;
+    margin: auto;
+    position: relative;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    font-size: 22pt;
+    font-weight: bold;
+}
+
+.slogan {
+    text-align: center;
+    font-size: 25pt;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 18pt;
+    margin: 20px 0;
+}
+
+.images {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+.round {
+    width: 321px;
+    height: 321px;
+    border-radius: 130px;
+    border: 1px solid rgba(255,255,255,0.4);
+    object-fit: cover;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 80px;
+}
+
+.info-block {
+    width: 45%;
+    font-size: 18pt;
+}
+
+.question {
+    text-align: center;
+    font-size: 25pt;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+/* КНОПКИ */
+.buttons button {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 16pt;
+    padding: 10px 26px;
+    color: white;
+
+    background: rgba(255, 255, 255, 0.18); /* ✔ корректная прозрачность */
+    backdrop-filter: blur(4px);
+
+    border: none;               /* ❌ убрали рамку */
+    border-radius: 22px;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* ИКОНКИ В КНОПКАХ */
+.buttons button img {
+    width: 26px;
+    height: 26px;
+}
+
+/* HOVER */
+.buttons button:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateY(-1px);
+}
+
+/* ACTIVE */
+.buttons button:active {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(1px);
+}
+
+.hello {
+    position: absolute;
+    top: 20px;
+    width: 35px;
+}
+
+.hello.left {
+    left: 30px;
+}
+
+.hello.right {
+    right: 30px;
+}
