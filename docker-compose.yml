@@ -1,0 +1,29 @@
+services:
+  backend_stream:
+    build:
+      context: .                          
+      dockerfile: docker/backend_stream/Dockerfile
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./scripts:/app/scripts
+      - ./model:/app/model            
+
+  backend_server:
+    build:
+      context: .                          
+      dockerfile: docker/backend_server/Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./scripts:/app/scripts
+      - ./model:/app/model           
+
+  frontend:
+    build:
+      context: .                         
+      dockerfile: docker/frontend/Dockerfile
+    ports:
+      - "5500:5500"
+    volumes:
+      - ./scripts/UI/frontend:/app/frontend  

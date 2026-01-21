@@ -1,0 +1,9 @@
+soundfile
+moviepy==1.0.3
+pydub==0.25.1
+vosk==0.3.45
+nltk==3.8.1
+numpy==1.24.3
+fastapi
+uvicorn
+python-multipart
