@@ -98,6 +98,34 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     };
 
+    /* =======================
+       ВЫЗОВ ОБЛАЧНОЙ ФУНКЦИИ
+    ======================= */
+    const sendAnalytics = async (text, startTime, endTime) => {
+        try {
+            const res = await fetch("https://functions.yandexcloud.net/d4ecr02fiqe5fq41ouhh", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    text: text,
+                    start_time: startTime,
+                    end_time: endTime
+                })
+            });
+
+            if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+            const data = await res.json();
+            console.log("Облачная аналитика:", data);
+        } catch (e) {
+            console.error("Ошибка при вызове облачной функции:", e);
+        }
+    };
+
+
+
+    /* =======================
+       ОБРАБОТКА КНОПКИ
+    ======================= */
     recordBtn.addEventListener('click', async () => {
 
         if (!isRecording) {
@@ -132,7 +160,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             processor.connect(audioContext.destination);
 
         } else {
-            /* ====== ПАУЗА ====== */
+            /* ====== ПАУЗА / ОСТАНОВКА ====== */
             isRecording = false;
             stopTimer();
 
@@ -147,6 +175,10 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // СБРОС recognizer
             await fetch("http://127.0.0.1:9000/reset", { method: "POST" });
+
+            // ВЫЗОВ ОБЛАЧНОЙ ФУНКЦИИ
+            const endTime = Date.now();
+            await sendAnalytics(finalText, startTime, endTime);
 
             processor.disconnect();
             input.disconnect();

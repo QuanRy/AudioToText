@@ -5,6 +5,15 @@ WORKDIR /app
 # Системные зависимости
 RUN apt-get update
 
+# СОЗДАЕМ ВСЕ ПАПКИ------------------------------------
+RUN mkdir -p /app/test_formats/WAV    
+RUN mkdir -p /app/test_formats/MP3
+RUN mkdir -p /app/test_formats/MP4
+RUN mkdir -p /app/uploads
+RUN mkdir -p /app/temp
+RUN mkdir -p /app/scripts/temp         
+# ------------------------------------------------------
+
 # Копируем requirements.txt из Dockerfile
 COPY docker/backend_server/requirements.txt .
 
