@@ -38,7 +38,7 @@ async def transcribe(file: UploadFile = File(...)):
         with open(txt_path, "r", encoding="utf-8") as f:
             text = f.read()
 
-        # 5. ВОЗВРАЩАЕМ JSON (ВАЖНО!)
+        # 5. ВОЗВРАЩАЕМ JSON
         return {
             "status": "ok",
             "text": text

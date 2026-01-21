@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (start) {
                 console.log("Запуск процесса транскрибации для файла:", currentFile);
-                // ⚠️ нет File-объекта → открываем диалог заново
+                // нет File-объекта → открываем диалог заново
                 openFileDialog();
             } else {
                 openFileDialog();
