@@ -444,7 +444,7 @@ border: none;
    <property name="styleSheet">
     <string notr="true">color: white;
 font-weight: bold;
-font-size: 25pt;
+font-size: 20pt;
 background-color: none;
 border: none; </string>
    </property>

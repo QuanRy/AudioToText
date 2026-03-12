@@ -92,12 +92,13 @@ class Ui_MainWindow(object):
             Устанавливает текст для элементов интерфейса на русском языке.
 
         """
+    
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(947, 843)
-        MainWindow.setMinimumSize(QSize(947, 843))
-        MainWindow.setMaximumSize(QSize(947, 843))
+        MainWindow.resize(947, 613)
+        MainWindow.setMinimumSize(QSize(947, 613))
+        MainWindow.setMaximumSize(QSize(947, 613))
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, "
@@ -105,10 +106,11 @@ class Ui_MainWindow(object):
             "font-family: Corbel;")
         self.label_hello_main = QLabel(self.centralwidget)
         self.label_hello_main.setObjectName(u"label_hello_main")
-        self.label_hello_main.setGeometry(QRect(70, 20, 901, 51))
+        self.label_hello_main.setGeometry(QRect(0, 10, 947, 51))
+        self.label_hello_main.setAlignment(Qt.AlignCenter)
         font = QFont()
         font.setFamilies([u"Corbel"])
-        font.setPointSize(22)
+        font.setPointSize(18)
         font.setBold(True)
         self.label_hello_main.setFont(font)
         self.label_hello_main.setStyleSheet(u"color: white;\n"
@@ -117,7 +119,7 @@ class Ui_MainWindow(object):
             "border: none; ")
         self.pushButton_choose_file = QPushButton(self.centralwidget)
         self.pushButton_choose_file.setObjectName(u"pushButton_choose_file")
-        self.pushButton_choose_file.setGeometry(QRect(120, 730, 201, 41))
+        self.pushButton_choose_file.setGeometry(QRect(120, 535, 201, 41))
         self.pushButton_choose_file.setStyleSheet(u"\n"
             "QPushButton{\n"
             "color: rgb(255, 255, 255);\n"
@@ -140,7 +142,7 @@ class Ui_MainWindow(object):
         self.pushButton_choose_file.setIconSize(QSize(25, 25))
         self.pushButton_record_audio = QPushButton(self.centralwidget)
         self.pushButton_record_audio.setObjectName(u"pushButton_record_audio")
-        self.pushButton_record_audio.setGeometry(QRect(390, 730, 201, 41))
+        self.pushButton_record_audio.setGeometry(QRect(390, 535, 201, 41))
         self.pushButton_record_audio.setStyleSheet(u"\n"
             "QPushButton{\n"
             "color: rgb(255, 255, 255);\n"
@@ -163,7 +165,7 @@ class Ui_MainWindow(object):
         self.pushButton_record_audio.setIconSize(QSize(25, 25))
         self.label_what_u_want = QLabel(self.centralwidget)
         self.label_what_u_want.setObjectName(u"label_what_u_want")
-        self.label_what_u_want.setGeometry(QRect(300, 660, 391, 41))
+        self.label_what_u_want.setGeometry(QRect(300, 475, 391, 41))
         font1 = QFont()
         font1.setFamilies([u"Corbel"])
         font1.setPointSize(25)
@@ -177,7 +179,7 @@ class Ui_MainWindow(object):
             "")
         self.pushButton_about_prog = QPushButton(self.centralwidget)
         self.pushButton_about_prog.setObjectName(u"pushButton_about_prog")
-        self.pushButton_about_prog.setGeometry(QRect(660, 730, 201, 41))
+        self.pushButton_about_prog.setGeometry(QRect(660, 535, 201, 41))
         self.pushButton_about_prog.setStyleSheet(u"\n"
             "QPushButton{\n"
             "color: rgb(255, 255, 255);\n"
@@ -201,9 +203,9 @@ class Ui_MainWindow(object):
         self.label_img_man_with_pc = QLabel(self.centralwidget)
         self.label_img_man_with_pc.setObjectName(u"label_img_man_with_pc")
         self.label_img_man_with_pc.setEnabled(True)
-        self.label_img_man_with_pc.setGeometry(QRect(130, 190, 321, 321))
+        self.label_img_man_with_pc.setGeometry(QRect(130, 130, 225, 225))
         self.label_img_man_with_pc.setFocusPolicy(Qt.NoFocus)
-        self.label_img_man_with_pc.setStyleSheet(u"border: 1px solid rgba(255,255,255,40);\n" "border-radius:130px;")
+        self.label_img_man_with_pc.setStyleSheet(u"border: 5px solid rgba(255,255,255,40);\n" "border-radius:112px;")
         self.label_img_man_with_pc.setFrameShape(QFrame.NoFrame)
         self.label_img_man_with_pc.setPixmap(QPixmap(u"../icons/img/dict_text_monitor_round.png"))
         self.label_img_man_with_pc.setScaledContents(True)
@@ -211,26 +213,32 @@ class Ui_MainWindow(object):
         self.label_img_pc = QLabel(self.centralwidget)
         self.label_img_pc.setObjectName(u"label_img_pc")
         self.label_img_pc.setEnabled(True)
-        self.label_img_pc.setGeometry(QRect(520, 190, 321, 321))
+        self.label_img_pc.setGeometry(QRect(592, 130, 225, 225))
         self.label_img_pc.setFocusPolicy(Qt.NoFocus)
-        self.label_img_pc.setStyleSheet(u"border: 1px solid rgba(255,255,255,40);\n" "border-radius:130px;")
+        self.label_img_pc.setStyleSheet(u"border: 5px solid rgba(255,255,255,40);\n" "border-radius:112px;")
         self.label_img_pc.setFrameShape(QFrame.NoFrame)
         self.label_img_pc.setPixmap(QPixmap(u"../icons/img/trancribation_round.png"))
         self.label_img_pc.setScaledContents(True)
         self.label_easy_fast_slogan = QLabel(self.centralwidget)
         self.label_easy_fast_slogan.setObjectName(u"label_easy_fast_slogan")
-        self.label_easy_fast_slogan.setGeometry(QRect(60, 80, 841, 41))
-        self.label_easy_fast_slogan.setFont(font1)
+        self.label_easy_fast_slogan.setGeometry(QRect(0, 55, 947, 41))
+        self.label_easy_fast_slogan.setAlignment(Qt.AlignCenter)
+        font_slogan = QFont()
+        font_slogan.setFamilies([u"Corbel"])
+        font_slogan.setPointSize(18)
+        font_slogan.setBold(True)
+        self.label_easy_fast_slogan.setFont(font_slogan)
         self.label_easy_fast_slogan.setStyleSheet(u"color: white;\n"
             "font-weight: bold;\n"
-            "font-size: 25pt;\n"
+            "font-size: 18pt;\n"
             "background-color: none;\n"
             "border: none; ")
         self.label_easy_fast_slogan.setWordWrap(True)
         self.label_easy_fast_slogan.setOpenExternalLinks(False)
         self.label_every_audio_to_text = QLabel(self.centralwidget)
         self.label_every_audio_to_text.setObjectName(u"label_every_audio_to_text")
-        self.label_every_audio_to_text.setGeometry(QRect(150, 130, 691, 61))
+        self.label_every_audio_to_text.setGeometry(QRect(0, 80, 947, 61))
+        self.label_every_audio_to_text.setAlignment(Qt.AlignCenter)
         font2 = QFont()
         font2.setFamilies([u"Corbel"])
         font2.setPointSize(18)
@@ -244,7 +252,7 @@ class Ui_MainWindow(object):
         self.label_every_audio_to_text.setOpenExternalLinks(False)
         self.label_about_left = QLabel(self.centralwidget)
         self.label_about_left.setObjectName(u"label_about_left")
-        self.label_about_left.setGeometry(QRect(120, 520, 351, 128))
+        self.label_about_left.setGeometry(QRect(120, 360, 351, 128))
         self.label_about_left.setFont(font2)
         self.label_about_left.setStyleSheet(u"color: white;\n"
             "font-size: 18pt;\n"
@@ -255,7 +263,7 @@ class Ui_MainWindow(object):
         self.label_about_left.setOpenExternalLinks(False)
         self.label_about_right = QLabel(self.centralwidget)
         self.label_about_right.setObjectName(u"label_about_right")
-        self.label_about_right.setGeometry(QRect(510, 520, 381, 128))
+        self.label_about_right.setGeometry(QRect(510, 360, 381, 128))
         self.label_about_right.setFont(font2)
         self.label_about_right.setStyleSheet(u"color: white;\n"
             "font-size: 18pt;\n"
@@ -266,7 +274,7 @@ class Ui_MainWindow(object):
         self.label_about_right.setOpenExternalLinks(False)
         self.label_every_audio_to_text_2 = QLabel(self.centralwidget)
         self.label_every_audio_to_text_2.setObjectName(u"label_every_audio_to_text_2")
-        self.label_every_audio_to_text_2.setGeometry(QRect(90, 520, 31, 51))
+        self.label_every_audio_to_text_2.setGeometry(QRect(90, 360, 31, 51))
         font3 = QFont()
         font3.setFamilies([u"Corbel"])
         font3.setPointSize(14)
@@ -281,7 +289,7 @@ class Ui_MainWindow(object):
         self.label_every_audio_to_text_2.setOpenExternalLinks(False)
         self.label_every_audio_to_text_3 = QLabel(self.centralwidget)
         self.label_every_audio_to_text_3.setObjectName(u"label_every_audio_to_text_3")
-        self.label_every_audio_to_text_3.setGeometry(QRect(478, 520, 41, 51))
+        self.label_every_audio_to_text_3.setGeometry(QRect(828, 360, 41, 51))
         self.label_every_audio_to_text_3.setFont(font3)
         self.label_every_audio_to_text_3.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -293,7 +301,7 @@ class Ui_MainWindow(object):
         self.label_every_audio_to_text_3.setOpenExternalLinks(False)
         self.label_every_audio_to_text_4 = QLabel(self.centralwidget)
         self.label_every_audio_to_text_4.setObjectName(u"label_every_audio_to_text_4")
-        self.label_every_audio_to_text_4.setGeometry(QRect(650, 660, 51, 51))
+        self.label_every_audio_to_text_4.setGeometry(QRect(650, 475, 51, 51))
         self.label_every_audio_to_text_4.setFont(font3)
         self.label_every_audio_to_text_4.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -305,7 +313,7 @@ class Ui_MainWindow(object):
         self.label_every_audio_to_text_4.setOpenExternalLinks(False)
         self.label_every_audio_to_text_5 = QLabel(self.centralwidget)
         self.label_every_audio_to_text_5.setObjectName(u"label_every_audio_to_text_5")
-        self.label_every_audio_to_text_5.setGeometry(QRect(120, 130, 31, 61))
+        self.label_every_audio_to_text_5.setGeometry(QRect(137, 80, 31, 61))
         self.label_every_audio_to_text_5.setFont(font3)
         self.label_every_audio_to_text_5.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -317,7 +325,7 @@ class Ui_MainWindow(object):
         self.label_every_audio_to_text_5.setOpenExternalLinks(False)
         self.label_every_audio_to_text_6 = QLabel(self.centralwidget)
         self.label_every_audio_to_text_6.setObjectName(u"label_every_audio_to_text_6")
-        self.label_every_audio_to_text_6.setGeometry(QRect(770, 130, 31, 61))
+        self.label_every_audio_to_text_6.setGeometry(QRect(779, 80, 31, 61))
         self.label_every_audio_to_text_6.setFont(font3)
         self.label_every_audio_to_text_6.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -329,7 +337,7 @@ class Ui_MainWindow(object):
         self.label_every_audio_to_text_6.setOpenExternalLinks(False)
         self.label_every_audio_to_text_7 = QLabel(self.centralwidget)
         self.label_every_audio_to_text_7.setObjectName(u"label_every_audio_to_text_7")
-        self.label_every_audio_to_text_7.setGeometry(QRect(30, 30, 35, 35))
+        self.label_every_audio_to_text_7.setGeometry(QRect(83, 18, 35, 35))
         self.label_every_audio_to_text_7.setFont(font3)
         self.label_every_audio_to_text_7.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -341,7 +349,7 @@ class Ui_MainWindow(object):
         self.label_every_audio_to_text_7.setOpenExternalLinks(False)
         self.label_every_audio_to_text_8 = QLabel(self.centralwidget)
         self.label_every_audio_to_text_8.setObjectName(u"label_every_audio_to_text_8")
-        self.label_every_audio_to_text_8.setGeometry(QRect(885, 30, 35, 35))
+        self.label_every_audio_to_text_8.setGeometry(QRect(829, 18, 35, 35))
         self.label_every_audio_to_text_8.setFont(font3)
         self.label_every_audio_to_text_8.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"

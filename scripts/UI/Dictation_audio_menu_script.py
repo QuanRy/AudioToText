@@ -61,9 +61,9 @@ class Ui_Dialog_dict_audio(object):
     def setupUi(self, Dialog_dict_audio):              # Установка параметров UI элементов окна надиктовки
         if not Dialog_dict_audio.objectName():
             Dialog_dict_audio.setObjectName(u"Dialog_dict_audio")
-        Dialog_dict_audio.resize(760, 671)
-        Dialog_dict_audio.setMinimumSize(QSize(760, 671))
-        Dialog_dict_audio.setMaximumSize(QSize(760, 671))
+        Dialog_dict_audio.resize(760, 591)
+        Dialog_dict_audio.setMinimumSize(QSize(760, 591))
+        Dialog_dict_audio.setMaximumSize(QSize(760, 591))
         Dialog_dict_audio.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 "
             u"rgba(81, 0, 135, 255), stop:0.427447 rgba(41, 61, 132, 235), stop:1 rgba(155, 79, 165, 255));\n"
             "font-family: Corbel;")
@@ -84,7 +84,7 @@ class Ui_Dialog_dict_audio(object):
         self.label_your_voice_slogan.setOpenExternalLinks(False)
         self.pushButton_save_as = QPushButton(Dialog_dict_audio)
         self.pushButton_save_as.setObjectName(u"pushButton_save_as")
-        self.pushButton_save_as.setGeometry(QRect(500, 600, 201, 41))
+        self.pushButton_save_as.setGeometry(QRect(500, 520, 201, 41))
         self.pushButton_save_as.setStyleSheet(u"\n"
             "QPushButton{\n"
             "color: rgb(255, 255, 255);\n"
@@ -108,7 +108,7 @@ class Ui_Dialog_dict_audio(object):
         self.pushButton_save_as.setIconSize(QSize(25, 25))
         self.lineEdit_way_to_save_file = QLineEdit(Dialog_dict_audio)
         self.lineEdit_way_to_save_file.setObjectName(u"lineEdit_way_to_save_file")
-        self.lineEdit_way_to_save_file.setGeometry(QRect(60, 600, 421, 41))
+        self.lineEdit_way_to_save_file.setGeometry(QRect(60, 520, 421, 41))
         self.lineEdit_way_to_save_file.setAcceptDrops(True)
         self.lineEdit_way_to_save_file.setStyleSheet(u"color: rgba(255, 255, 255, 200); /* "
             u"\u041f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u044b\u0439 \u0431\u0435\u043b\u044b\u0439 "
@@ -123,7 +123,7 @@ class Ui_Dialog_dict_audio(object):
         self.lineEdit_way_to_save_file.setFrame(True)
         self.label_save_as__info = QLabel(Dialog_dict_audio)
         self.label_save_as__info.setObjectName(u"label_save_as__info")
-        self.label_save_as__info.setGeometry(QRect(80, 570, 391, 31))
+        self.label_save_as__info.setGeometry(QRect(80, 490, 391, 31))
         font1 = QFont()
         font1.setFamilies([u"Corbel"])
         font1.setPointSize(14)
@@ -184,7 +184,7 @@ class Ui_Dialog_dict_audio(object):
             "")
         self.textEdit_field_to_text_from_audio = QTextEdit(Dialog_dict_audio)
         self.textEdit_field_to_text_from_audio.setObjectName(u"textEdit_field_to_text_from_audio")
-        self.textEdit_field_to_text_from_audio.setGeometry(QRect(60, 170, 641, 391))
+        self.textEdit_field_to_text_from_audio.setGeometry(QRect(60, 170, 641, 311))
         self.textEdit_field_to_text_from_audio.setStyleSheet(u"""
             QTextEdit {
                 color: rgba(255, 255, 255, 200); 

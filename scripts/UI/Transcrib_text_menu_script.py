@@ -57,9 +57,9 @@ class Ui_Dialog_audio_file_to_text(object):
     def setupUi(self, Dialog_audio_file_to_text):
         if not Dialog_audio_file_to_text.objectName():
             Dialog_audio_file_to_text.setObjectName(u"Dialog_audio_file_to_text")
-        Dialog_audio_file_to_text.resize(760, 671)
-        Dialog_audio_file_to_text.setMinimumSize(QSize(760, 671))
-        Dialog_audio_file_to_text.setMaximumSize(QSize(760, 671))
+        Dialog_audio_file_to_text.resize(760, 591)
+        Dialog_audio_file_to_text.setMinimumSize(QSize(760, 591))
+        Dialog_audio_file_to_text.setMaximumSize(QSize(760, 591))
         Dialog_audio_file_to_text.setStyleSheet(u"background-color: qlineargradient(spread:pad, "
             u"x1:1, y1:1, x2:0, y2:0, stop:0 rgba(81, 0, 135, 255), stop:0.427447 "
             u"rgba(41, 61, 132, 235), stop:1 rgba(155, 79, 165, 255));\n"
@@ -133,7 +133,7 @@ class Ui_Dialog_audio_file_to_text(object):
             "")
         self.lineEdit_way_save_file = QLineEdit(Dialog_audio_file_to_text)
         self.lineEdit_way_save_file.setObjectName(u"lineEdit_way_save_file")
-        self.lineEdit_way_save_file.setGeometry(QRect(60, 600, 421, 41))
+        self.lineEdit_way_save_file.setGeometry(QRect(60, 520, 421, 41))
         self.lineEdit_way_save_file.setAcceptDrops(True)
         self.lineEdit_way_save_file.setStyleSheet(u"color: rgba(255, 255, 255, 200); /* "
             u"\u041f\u0440\u043e\u0437\u0440\u0430\u0447\u043d\u044b\u0439 \u0431\u0435\u043b\u044b\u0439 "
@@ -148,7 +148,7 @@ class Ui_Dialog_audio_file_to_text(object):
         self.lineEdit_way_save_file.setFrame(True)
         self.label_save_as__info = QLabel(Dialog_audio_file_to_text)
         self.label_save_as__info.setObjectName(u"label_save_as__info")
-        self.label_save_as__info.setGeometry(QRect(80, 570, 391, 31))
+        self.label_save_as__info.setGeometry(QRect(80, 490, 391, 31))
         self.label_save_as__info.setFont(font1)
         self.label_save_as__info.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -157,7 +157,7 @@ class Ui_Dialog_audio_file_to_text(object):
             "")
         self.pushButton_save_files = QPushButton(Dialog_audio_file_to_text)
         self.pushButton_save_files.setObjectName(u"pushButton_save_files")
-        self.pushButton_save_files.setGeometry(QRect(500, 600, 201, 41))
+        self.pushButton_save_files.setGeometry(QRect(500, 520, 201, 41))
         self.pushButton_save_files.setStyleSheet(u"\n"
             "QPushButton{\n"
             "color: rgb(255, 255, 255);\n"
@@ -180,7 +180,7 @@ class Ui_Dialog_audio_file_to_text(object):
         self.pushButton_save_files.setIconSize(QSize(25, 25))
         self.textEdit_field_to_text = QTextEdit(Dialog_audio_file_to_text)
         self.textEdit_field_to_text.setObjectName(u"textEdit_field_to_text")
-        self.textEdit_field_to_text.setGeometry(QRect(60, 170, 641, 391))
+        self.textEdit_field_to_text.setGeometry(QRect(60, 170, 641, 311))
         self.textEdit_field_to_text.setStyleSheet(u"""
             QTextEdit {
                 color: rgba(255, 255, 255, 200); 

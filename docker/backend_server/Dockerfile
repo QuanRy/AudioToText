@@ -3,7 +3,7 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Системные зависимости
-RUN apt-get update
+RUN apt-get update && apt-get install -y ffmpeg
 
 # СОЗДАЕМ ВСЕ ПАПКИ------------------------------------
 RUN mkdir -p /app/test_formats/WAV    

@@ -28,9 +28,9 @@ class Ui_Dialog_info(object):
     def setupUi(self, Dialog_info):           # Установка параметров UI элементов окна со справочной информацией
         if not Dialog_info.objectName():
             Dialog_info.setObjectName(u"Dialog_info")
-        Dialog_info.resize(679, 679)
-        Dialog_info.setMinimumSize(QSize(679, 679))
-        Dialog_info.setMaximumSize(QSize(679, 679))
+        Dialog_info.resize(679, 579)
+        Dialog_info.setMinimumSize(QSize(679, 579))
+        Dialog_info.setMaximumSize(QSize(679, 579))
         Dialog_info.setStyleSheet(u"background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 "
             u"rgba(81, 0, 135, 255), stop:0.427447 rgba(41, 61, 132, 235), stop:1 rgba(155, 79, 165, 255));\n"
             "font-family: Corbel;")
@@ -61,7 +61,7 @@ class Ui_Dialog_info(object):
         self.pushButton_back_to_main.setIconSize(QSize(35, 35))
         self.label_every_audio_to_text_9 = QLabel(Dialog_info)
         self.label_every_audio_to_text_9.setObjectName(u"label_every_audio_to_text_9")
-        self.label_every_audio_to_text_9.setGeometry(QRect(577, 70, 41, 35))
+        self.label_every_audio_to_text_9.setGeometry(QRect(577, 10, 41, 35))
         font = QFont()
         font.setFamilies([u"Corbel"])
         font.setPointSize(14)
@@ -76,7 +76,7 @@ class Ui_Dialog_info(object):
         self.label_every_audio_to_text_9.setOpenExternalLinks(False)
         self.label_every_audio_to_text_10 = QLabel(Dialog_info)
         self.label_every_audio_to_text_10.setObjectName(u"label_every_audio_to_text_10")
-        self.label_every_audio_to_text_10.setGeometry(QRect(160, 136, 41, 41))
+        self.label_every_audio_to_text_10.setGeometry(QRect(160, 56, 41, 41))
         self.label_every_audio_to_text_10.setFont(font)
         self.label_every_audio_to_text_10.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -88,7 +88,7 @@ class Ui_Dialog_info(object):
         self.label_every_audio_to_text_10.setOpenExternalLinks(False)
         self.label_every_audio_to_text_11 = QLabel(Dialog_info)
         self.label_every_audio_to_text_11.setObjectName(u"label_every_audio_to_text_11")
-        self.label_every_audio_to_text_11.setGeometry(QRect(160, 300, 41, 41))
+        self.label_every_audio_to_text_11.setGeometry(QRect(160, 220, 41, 41))
         self.label_every_audio_to_text_11.setFont(font)
         self.label_every_audio_to_text_11.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -100,7 +100,7 @@ class Ui_Dialog_info(object):
         self.label_every_audio_to_text_11.setOpenExternalLinks(False)
         self.label_every_audio_to_text_12 = QLabel(Dialog_info)
         self.label_every_audio_to_text_12.setObjectName(u"label_every_audio_to_text_12")
-        self.label_every_audio_to_text_12.setGeometry(QRect(160, 420, 41, 41))
+        self.label_every_audio_to_text_12.setGeometry(QRect(160, 340, 41, 41))
         self.label_every_audio_to_text_12.setFont(font)
         self.label_every_audio_to_text_12.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -112,7 +112,7 @@ class Ui_Dialog_info(object):
         self.label_every_audio_to_text_12.setOpenExternalLinks(False)
         self.label_every_audio_to_text_13 = QLabel(Dialog_info)
         self.label_every_audio_to_text_13.setObjectName(u"label_every_audio_to_text_13")
-        self.label_every_audio_to_text_13.setGeometry(QRect(160, 550, 41, 41))
+        self.label_every_audio_to_text_13.setGeometry(QRect(160, 470, 41, 41))
         self.label_every_audio_to_text_13.setFont(font)
         self.label_every_audio_to_text_13.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -124,7 +124,7 @@ class Ui_Dialog_info(object):
         self.label_every_audio_to_text_13.setOpenExternalLinks(False)
         self.label_every_audio_to_text_14 = QLabel(Dialog_info)
         self.label_every_audio_to_text_14.setObjectName(u"label_every_audio_to_text_14")
-        self.label_every_audio_to_text_14.setGeometry(QRect(35, 170, 51, 51))
+        self.label_every_audio_to_text_14.setGeometry(QRect(35, 90, 51, 51))
         self.label_every_audio_to_text_14.setFont(font)
         self.label_every_audio_to_text_14.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -136,7 +136,7 @@ class Ui_Dialog_info(object):
         self.label_every_audio_to_text_14.setOpenExternalLinks(False)
         self.label_every_audio_to_text_15 = QLabel(Dialog_info)
         self.label_every_audio_to_text_15.setObjectName(u"label_every_audio_to_text_15")
-        self.label_every_audio_to_text_15.setGeometry(QRect(35, 330, 51, 51))
+        self.label_every_audio_to_text_15.setGeometry(QRect(35, 250, 51, 51))
         self.label_every_audio_to_text_15.setFont(font)
         self.label_every_audio_to_text_15.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -148,7 +148,7 @@ class Ui_Dialog_info(object):
         self.label_every_audio_to_text_15.setOpenExternalLinks(False)
         self.label_every_audio_to_text_16 = QLabel(Dialog_info)
         self.label_every_audio_to_text_16.setObjectName(u"label_every_audio_to_text_16")
-        self.label_every_audio_to_text_16.setGeometry(QRect(35, 450, 51, 51))
+        self.label_every_audio_to_text_16.setGeometry(QRect(35, 370, 51, 51))
         self.label_every_audio_to_text_16.setFont(font)
         self.label_every_audio_to_text_16.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -160,7 +160,7 @@ class Ui_Dialog_info(object):
         self.label_every_audio_to_text_16.setOpenExternalLinks(False)
         self.label_every_audio_to_text_17 = QLabel(Dialog_info)
         self.label_every_audio_to_text_17.setObjectName(u"label_every_audio_to_text_17")
-        self.label_every_audio_to_text_17.setGeometry(QRect(35, 490, 51, 51))
+        self.label_every_audio_to_text_17.setGeometry(QRect(35, 410, 51, 51))
         self.label_every_audio_to_text_17.setFont(font)
         self.label_every_audio_to_text_17.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -172,7 +172,7 @@ class Ui_Dialog_info(object):
         self.label_every_audio_to_text_17.setOpenExternalLinks(False)
         self.label_every_audio_to_text_18 = QLabel(Dialog_info)
         self.label_every_audio_to_text_18.setObjectName(u"label_every_audio_to_text_18")
-        self.label_every_audio_to_text_18.setGeometry(QRect(35, 580, 51, 51))
+        self.label_every_audio_to_text_18.setGeometry(QRect(35, 500, 51, 51))
         self.label_every_audio_to_text_18.setFont(font)
         self.label_every_audio_to_text_18.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -184,7 +184,7 @@ class Ui_Dialog_info(object):
         self.label_every_audio_to_text_18.setOpenExternalLinks(False)
         self.label_main_label_info = QLabel(Dialog_info)
         self.label_main_label_info.setObjectName(u"label_main_label_info")
-        self.label_main_label_info.setGeometry(QRect(61, 71, 563, 41))
+        self.label_main_label_info.setGeometry(QRect(61, 10, 563, 41))
         font1 = QFont()
         font1.setFamilies([u"Corbel"])
         font1.setPointSize(25)
@@ -199,7 +199,7 @@ class Ui_Dialog_info(object):
         self.label_main_label_info.setOpenExternalLinks(False)
         self.label_every_audio_to_text_8 = QLabel(Dialog_info)
         self.label_every_audio_to_text_8.setObjectName(u"label_every_audio_to_text_8")
-        self.label_every_audio_to_text_8.setGeometry(QRect(80, 70, 41, 35))
+        self.label_every_audio_to_text_8.setGeometry(QRect(80, 10, 41, 35))
         self.label_every_audio_to_text_8.setFont(font)
         self.label_every_audio_to_text_8.setStyleSheet(u"color: white;\n"
             "font-size: 14pt;\n"
@@ -211,7 +211,7 @@ class Ui_Dialog_info(object):
         self.label_every_audio_to_text_8.setOpenExternalLinks(False)
         self.label_6 = QLabel(Dialog_info)
         self.label_6.setObjectName(u"label_6")
-        self.label_6.setGeometry(QRect(50, 140, 421, 33))
+        self.label_6.setGeometry(QRect(50, 60, 421, 33))
         font2 = QFont()
         font2.setFamilies([u"Corbel"])
         font2.setPointSize(20)
@@ -225,7 +225,7 @@ class Ui_Dialog_info(object):
         self.label_6.setFrameShadow(QFrame.Raised)
         self.label_8 = QLabel(Dialog_info)
         self.label_8.setObjectName(u"label_8")
-        self.label_8.setGeometry(QRect(75, 180, 561, 112))
+        self.label_8.setGeometry(QRect(75, 100, 561, 112))
         font3 = QFont()
         font3.setFamilies([u"Corbel"])
         font3.setPointSize(18)
@@ -239,7 +239,7 @@ class Ui_Dialog_info(object):
         self.label_8.setOpenExternalLinks(False)
         self.label_10 = QLabel(Dialog_info)
         self.label_10.setObjectName(u"label_10")
-        self.label_10.setGeometry(QRect(50, 550, 364, 33))
+        self.label_10.setGeometry(QRect(50, 470, 364, 33))
         self.label_10.setFont(font2)
         self.label_10.setStyleSheet(u"color: white;\n"
             "font-size: 20pt;\n"
@@ -248,7 +248,7 @@ class Ui_Dialog_info(object):
             "")
         self.label_11 = QLabel(Dialog_info)
         self.label_11.setObjectName(u"label_11")
-        self.label_11.setGeometry(QRect(75, 595, 551, 35))
+        self.label_11.setGeometry(QRect(75, 515, 551, 35))
         self.label_11.setFont(font3)
         self.label_11.setStyleSheet(u"color: white;\n"
             "font-size: 18pt;\n"
@@ -259,7 +259,7 @@ class Ui_Dialog_info(object):
         self.label_11.setOpenExternalLinks(False)
         self.label_13 = QLabel(Dialog_info)
         self.label_13.setObjectName(u"label_13")
-        self.label_13.setGeometry(QRect(75, 465, 561, 82))
+        self.label_13.setGeometry(QRect(75, 385, 561, 82))
         self.label_13.setFont(font3)
         self.label_13.setStyleSheet(u"color: white;\n"
             "font-size: 18pt;\n"
@@ -270,7 +270,7 @@ class Ui_Dialog_info(object):
         self.label_13.setOpenExternalLinks(False)
         self.label_12 = QLabel(Dialog_info)
         self.label_12.setObjectName(u"label_12")
-        self.label_12.setGeometry(QRect(50, 420, 524, 33))
+        self.label_12.setGeometry(QRect(50, 340, 524, 33))
         self.label_12.setFont(font2)
         self.label_12.setStyleSheet(u"color: white;\n"
             "font-size: 20pt;\n"
@@ -279,7 +279,7 @@ class Ui_Dialog_info(object):
             "")
         self.label_7 = QLabel(Dialog_info)
         self.label_7.setObjectName(u"label_7")
-        self.label_7.setGeometry(QRect(50, 300, 489, 33))
+        self.label_7.setGeometry(QRect(50, 220, 489, 33))
         self.label_7.setFont(font2)
         self.label_7.setStyleSheet(u"color: white;\n"
             "font-size: 20pt;\n"
@@ -288,7 +288,7 @@ class Ui_Dialog_info(object):
             "")
         self.label_9 = QLabel(Dialog_info)
         self.label_9.setObjectName(u"label_9")
-        self.label_9.setGeometry(QRect(75, 340, 551, 70))
+        self.label_9.setGeometry(QRect(75, 260, 551, 70))
         self.label_9.setFont(font3)
         self.label_9.setStyleSheet(u"color: white;\n"
             "font-size: 18pt;\n"
