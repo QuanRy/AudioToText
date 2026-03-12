@@ -2,8 +2,11 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-# Копируем только фронтенд
+# Копируем фронтенд
 COPY scripts/UI/frontend ./frontend
+
+# Копируем иконки
+COPY icons ./frontend/icons
 
 WORKDIR /app/frontend
 
