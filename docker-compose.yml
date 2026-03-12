@@ -27,3 +27,4 @@ services:
       - "5500:5500"
     volumes:
       - ./scripts/UI/frontend:/app/frontend  
+      - ./icons:/app/frontend/icons
