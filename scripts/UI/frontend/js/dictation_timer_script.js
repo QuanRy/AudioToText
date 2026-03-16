@@ -99,31 +99,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
 
     /* =======================
-       ВЫЗОВ ОБЛАЧНОЙ ФУНКЦИИ
-    ======================= */
-    // const sendAnalytics = async (text, startTime, endTime) => {
-    //     try {
-    //         const res = await fetch("https://functions.yandexcloud.net/d4ecr02fiqe5fq41ouhh", {
-    //             method: "POST",
-    //             headers: { "Content-Type": "application/json" },
-    //             body: JSON.stringify({
-    //                 text: text,
-    //                 start_time: startTime,
-    //                 end_time: endTime
-    //             })
-    //         });
-
-    //         if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-    //         const data = await res.json();
-    //         console.log("Облачная аналитика:", data);
-    //     } catch (e) {
-    //         console.error("Ошибка при вызове облачной функции:", e);
-    //     }
-    // };
-
-
-
-    /* =======================
        ОБРАБОТКА КНОПКИ
     ======================= */
     recordBtn.addEventListener('click', async () => {
@@ -173,12 +148,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                 await sendChunk(pcm16);
             }
 
-            // СБРОС recognizer
-            await fetch("http://127.0.0.1:9000/reset", { method: "POST" });
-
-            // ВЫЗОВ ОБЛАЧНОЙ ФУНКЦИИ
-            const endTime = Date.now();
-            // await sendAnalytics(finalText, startTime, endTime);
+            // СОХРАНЯЕМ В MONGODB при паузе
+            await fetch("http://127.0.0.1:9000/pause", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ text: textField.value })
+            });
 
             processor.disconnect();
             input.disconnect();
@@ -186,4 +161,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             stream.getTracks().forEach(t => t.stop());
         }
     });
+
+    // Сброс сессии при закрытии или обновлении страницы
+    window.addEventListener('beforeunload', () => {
+        navigator.sendBeacon("http://127.0.0.1:9000/reset");
+    });
+
 });
