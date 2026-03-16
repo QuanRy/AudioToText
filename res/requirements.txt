@@ -8,3 +8,4 @@ pyaudio==0.2.14
 fastapi
 uvicorn
 python-multipart
+pymongo

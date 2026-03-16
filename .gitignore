@@ -8,3 +8,7 @@ __pycache__
 
 .idea
 .env
+
+*.log
+
+test_formats/
