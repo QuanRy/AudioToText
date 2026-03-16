@@ -5,7 +5,7 @@ from pathlib import Path
 
 from model.format_to_audio import continue_process_transcription
 from model.wav_to_text import start_model
-from mongo_service import save_transcription  # НОВЫЙ ИМПОРТ
+from mongo_service import save_transcription, get_history, update_history_text, delete_history_record
 
 app = FastAPI()
 
@@ -63,4 +63,27 @@ async def transcribe(file: UploadFile = File(...)):
             "status": "error",
             "message": str(e)
         }
-    
+
+@app.get("/history")
+async def history():
+    try:
+        records = get_history()
+        return {"status": "ok", "records": records}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
+@app.put("/history/{record_id}")
+async def update_record(record_id: str, data: dict):
+    try:
+        update_history_text(record_id, data.get("text", ""))
+        return {"status": "ok"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
+@app.delete("/history/{record_id}")
+async def delete_record(record_id: str):
+    try:
+        delete_history_record(record_id)
+        return {"status": "ok"}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}

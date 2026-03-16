@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>AudioToText — История</title>
+    <link rel="icon" type="image/png" href="../../../../icons/img/smiles/micro_40.png">
+    <link rel="stylesheet" href="../css/history_menu.css">
+</head>
+<body>
+
+<div class="app">
+
+    <button class="back-btn" title="Вернуться в главное меню">
+        <img src="../../../../icons/back_arrow.svg" alt="back">
+    </button>
+
+    <h1 class="title">История транскрибаций</h1>
+
+    <div class="history-container">
+        <div class="history-header">
+            <span>Название</span>
+            <span>Расш.</span>
+            <span>Длит. (сек)</span>
+            <span>Симв.</span>
+            <span>Текст</span>
+            <span>Создан</span>
+            <span>Изменён</span>
+        </div>
+        <div class="history-list" id="historyList">
+            <div class="history-loading">Загрузка...</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- МОДАЛЬНОЕ ОКНО -->
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+
+        <h2 class="modal-title">Информация об аудио</h2>
+
+        <!-- Краткая информация -->
+        <div class="modal-info-grid">
+            <div class="modal-info-item">
+                <label>Название</label>
+                <input type="text" id="modalFilename" readonly>
+            </div>
+            <div class="modal-info-item">
+                <label>Расширение</label>
+                <input type="text" id="modalExtension" readonly>
+            </div>
+            <div class="modal-info-item">
+                <label>Длительность (сек)</label>
+                <input type="text" id="modalDuration" readonly>
+            </div>
+            <div class="modal-info-item">
+                <label>Кол-во символов</label>
+                <input type="text" id="modalCharCount" readonly>
+            </div>
+            <div class="modal-info-item">
+                <label>Дата создания</label>
+                <input type="text" id="modalCreatedAt" readonly>
+            </div>
+            <div class="modal-info-item">
+                <label>Дата изменения</label>
+                <input type="text" id="modalUpdatedAt" readonly>
+            </div>
+        </div>
+
+        <!-- Полный текст -->
+        <label class="modal-text-label">Текст транскрибации</label>
+        <textarea class="modal-text-field" id="modalText"></textarea>
+
+        <!-- Кнопки -->
+        <div class="modal-buttons">
+            <button class="modal-btn btn-back" id="modalClose">Назад</button>
+            <button class="modal-btn btn-save" id="modalSave" disabled>Сохранить изменения</button>
+            <button class="modal-btn btn-delete" id="modalDelete">Удалить</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- Диалог подтверждения удаления -->
+<div class="confirm-overlay" id="confirmOverlay">
+    <div class="confirm-box">
+        <p>Вы действительно хотите удалить текущую запись?</p>
+        <div class="confirm-buttons">
+            <button class="modal-btn btn-delete" id="confirmYes">Да</button>
+            <button class="modal-btn btn-back" id="confirmNo">Нет</button>
+        </div>
+    </div>
+</div>
+
+<script src="../js/history_script.js"></script>
+<script src="../js/back_btn_script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+* {
+    box-sizing: border-box;
+    font-family: Corbel, sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(
+        135deg,
+        rgba(81, 0, 135, 1),
+        rgba(41, 61, 132, 0.92),
+        rgba(155, 79, 165, 1)
+    );
+    color: white;
+}
+
+.app {
+    width: 947px;
+    height: 843px;
+    margin: auto;
+    position: relative;
+    padding: 20px 30px;
+}
+
+/* КНОПКА НАЗАД */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.28);
+}
+
+.back-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+/* ЗАГОЛОВОК */
+.title {
+    text-align: center;
+    font-size: 22pt;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* КОНТЕЙНЕР ИСТОРИИ */
+.history-container {
+    width: 100%;
+    height: 720px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ШАПКА ТАБЛИЦЫ */
+.history-header {
+    display: grid;
+    grid-template-columns: 1.5fr 0.6fr 0.8fr 0.6fr 2fr 1.2fr 1.2fr;
+    gap: 10px;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    font-size: 11pt;
+    font-weight: bold;
+    border-radius: 20px 20px 0 0;
+}
+
+/* СПИСОК */
+.history-list {
+    overflow-y: auto;
+    flex: 1;
+    padding: 8px 10px;
+}
+
+.history-list::-webkit-scrollbar {
+    width: 20px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+}
+
+.history-list::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* СТРОКА */
+.history-row {
+    display: grid;
+    grid-template-columns: 1.5fr 0.6fr 0.8fr 0.6fr 2fr 1.2fr 1.2fr;
+    gap: 10px;
+    padding: 10px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    font-size: 10pt;
+    align-items: center;
+    transition: background 0.15s ease;
+    cursor: pointer;
+}
+
+.history-row:hover {
+    background: rgba(255,255,255,0.1);
+    border-radius: 12px;
+}
+
+.history-row span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgba(255,255,255,0.9);
+}
+
+.history-loading,
+.history-empty {
+    text-align: center;
+    padding: 40px;
+    font-size: 14pt;
+    color: rgba(255,255,255,0.6);
+}
+
+/* =====================
+   МОДАЛЬНОЕ ОКНО
+===================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal {
+    width: 780px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: linear-gradient(
+        135deg,
+        rgba(81, 0, 135, 0.97),
+        rgba(41, 61, 132, 0.97),
+        rgba(155, 79, 165, 0.97)
+    );
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 24px;
+    padding: 30px 35px;
+    color: white;
+}
+
+.modal::-webkit-scrollbar {
+    width: 16px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 20pt;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* ГРИД КРАТКОЙ ИНФОРМАЦИИ */
+.modal-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.modal-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.modal-info-item label {
+    font-size: 10pt;
+    color: rgba(255,255,255,0.7);
+}
+
+.modal-info-item input {
+    width: 100%;
+    font-size: 12pt;
+    padding: 8px 14px;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 12px;
+    color: rgba(255,255,255,0.9);
+    outline: none;
+    cursor: default;
+}
+
+/* ТЕКСТ ТРАНСКРИБАЦИИ */
+.modal-text-label {
+    font-size: 12pt;
+    color: rgba(255,255,255,0.8);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.modal-text-field {
+    width: 100%;
+    height: 220px;
+    font-size: 12pt;
+    padding: 10px 15px;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    color: rgba(255,255,255,0.9);
+    resize: none;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.modal-text-field::-webkit-scrollbar {
+    width: 16px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+}
+
+.modal-text-field::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.3);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* КНОПКИ МОДАЛЬНОГО ОКНА */
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.modal-btn {
+    flex: 1;
+    padding: 10px 20px;
+    font-size: 13pt;
+    font-family: Corbel, sans-serif;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-back {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+.btn-back:hover {
+    background: rgba(255,255,255,0.3);
+}
+
+.btn-save {
+    background: rgba(128,128,128,0.35);
+    color: rgba(255,255,255,0.4);
+    border: 1px solid rgba(255,255,255,0.2);
+    cursor: not-allowed;
+}
+
+.btn-save.active {
+    background: rgba(100, 220, 80, 0.75);
+    color: white;
+    border: 1px solid rgba(100,220,80,0.9);
+    cursor: pointer;
+}
+
+.btn-save.active:hover {
+    background: rgba(100, 220, 80, 0.95);
+}
+
+.btn-delete {
+    background: rgba(220, 50, 50, 0.75);
+    color: white;
+    border: 1px solid rgba(220,50,50,0.9);
+}
+
+.btn-delete:hover {
+    background: rgba(220, 50, 50, 0.95);
+}
+
+/* ДИАЛОГ ПОДТВЕРЖДЕНИЯ */
+.confirm-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirm-overlay.active {
+    display: flex;
+}
+
+.confirm-box {
+    background: linear-gradient(
+        135deg,
+        rgba(81, 0, 135, 0.98),
+        rgba(41, 61, 132, 0.98)
+    );
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+    width: 420px;
+}
+
+.confirm-box p {
+    font-size: 14pt;
+    margin-bottom: 24px;
+}
+
+.confirm-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.confirm-buttons .modal-btn {
+    flex: none;
+    width: 120px;
+}

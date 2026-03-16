@@ -31,3 +31,35 @@ def update_transcription(session_id: str, text: str, duration: float):
         }}
     )
     print(f"Обновлено в MongoDB, id: {session_id}")
+
+def get_history():
+    records = list(collection.find().sort("created_at", -1))  # свежие сверху
+    result = []
+    for r in records:
+        result.append({
+            "id": str(r["_id"]),
+            "filename": r.get("filename", ""),
+            "extension": r.get("extension", ""),
+            "duration_sec": r.get("duration_sec", 0),
+            "char_count": r.get("char_count", 0),
+            "text": r.get("text", ""),
+            "created_at": r.get("created_at", "").isoformat() if r.get("created_at") else None,
+            "updated_at": r.get("updated_at", "").isoformat() if r.get("updated_at") else None,
+        })
+    return result
+
+def update_history_text(record_id: str, text: str):
+    collection.update_one(
+        {"_id": ObjectId(record_id)},
+        {"$set": {
+            "text": text,
+            "char_count": len(text),
+            "updated_at": datetime.now()
+        }}
+    )
+    print(f"Текст обновлён, id: {record_id}")
+
+def delete_history_record(record_id: str):
+    collection.delete_one({"_id": ObjectId(record_id)})
+    print(f"Запись удалена, id: {record_id}")
+    
