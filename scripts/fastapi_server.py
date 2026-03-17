@@ -32,7 +32,7 @@ async def transcribe(file: UploadFile = File(...)):
         # 2. конвертация в WAV (если нужно)
         wav_path = continue_process_transcription(str(input_path))
 
-        # 3. транскрибация — start_model не трогаем, возвращает путь как раньше
+        # 3. транскрибация — start_model 
         start_time = time.perf_counter()
         txt_path = start_model(wav_path)
         duration = round(time.perf_counter() - start_time, 2)
