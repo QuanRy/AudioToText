@@ -7,3 +7,4 @@ numpy==1.24.3
 fastapi
 uvicorn
 python-multipart
+pymongo

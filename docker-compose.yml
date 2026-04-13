@@ -1,30 +1,62 @@
 services:
+
+  mongo:
+    build:
+      context: .
+      dockerfile: docker/DB/Dockerfile
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
   backend_stream:
     build:
-      context: .                          
+      context: .
       dockerfile: docker/backend_stream/Dockerfile
     ports:
       - "9000:9000"
     volumes:
       - ./scripts:/app/scripts
-      - ./model:/app/model            
+      - ./model:/app/model
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/
+    depends_on:
+      - mongo
 
   backend_server:
     build:
-      context: .                          
+      context: .
       dockerfile: docker/backend_server/Dockerfile
     ports:
       - "8000:8000"
     volumes:
       - ./scripts:/app/scripts
-      - ./model:/app/model           
+      - ./model:/app/model
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/
+    depends_on:
+      - mongo
 
   frontend:
     build:
-      context: .                         
+      context: .
       dockerfile: docker/frontend/Dockerfile
     ports:
       - "5500:5500"
     volumes:
-      - ./scripts/UI/frontend:/app/frontend  
+      - ./scripts/UI/frontend:/app/frontend
       - ./icons:/app/frontend/icons
+
+  tests:
+    build:
+      context: .
+      dockerfile: docker/tests/Dockerfile
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/
+    depends_on:
+      - mongo
+    profiles:
+      - testing
+
+volumes:
+  mongo_data:
