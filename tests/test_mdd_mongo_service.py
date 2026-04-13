@@ -49,3 +49,24 @@ def test_full_module_flow():
 
     history = get_history()
     assert len(history) == 0
+
+# Провальный тест
+def test_mdd_intentional_failure():
+    """
+    Длина файла != выделенной памяти. Пересчет произойдет лишь при Update()
+    """
+
+    # 1. создаём запись с ОШИБОЧНЫМ char_count
+    record_id = save_transcription(
+        filename="bug.mp3",
+        extension=".mp3",
+        duration=3,
+        char_count=999,   # Излишнее значение для заполнения БД
+        text="hello"
+    )
+
+    history = get_history()
+    record = history[0]
+
+    # char_count НЕ совпадает с len(text)
+    assert record["char_count"] == len(record["text"])

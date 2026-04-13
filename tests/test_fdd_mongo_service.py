@@ -122,3 +122,16 @@ def test_invalid_duration():
             char_count=10,
             text="hello"
         )
+
+# Провальный тест
+def test_missing_extension():
+    """Расширение отсутствует, оно передано в названии файла"""
+
+    with pytest.raises(Exception):
+        save_transcription(
+            filename="audio.mp3",
+            extension=None,
+            duration=2,
+            char_count=5,
+            text="hello"
+        )
