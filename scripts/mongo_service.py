@@ -4,9 +4,10 @@ from bson import ObjectId
 import os
 
 MONGO_URL = os.getenv("MONGO_URL", "mongodb://localhost:27017/")
+DB_NAME = os.getenv("DB_NAME", "audiototext_tests")
 
 client = MongoClient(MONGO_URL)
-db = client["audiototext_tests"]   # название БД
+db = client[DB_NAME]
 collection = db["transcriptions"]
 
 def save_transcription(filename: str, extension: str, duration: float, char_count: int, text: str):
