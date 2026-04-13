@@ -59,7 +59,7 @@ def get_history():
     return result
 
 def update_history_text(record_id: str, text: str):
-    collection.update_one(
+    result = collection.update_one(
         {"_id": ObjectId(record_id)},
         {"$set": {
             "text": text,
@@ -67,9 +67,18 @@ def update_history_text(record_id: str, text: str):
             "updated_at": datetime.now()
         }}
     )
+
+    # если запись не найдена
+    if result.matched_count == 0:
+        raise ValueError("Record not found")
+
     print(f"Текст обновлён, id: {record_id}")
 
 def delete_history_record(record_id: str):
-    collection.delete_one({"_id": ObjectId(record_id)})
-    print(f"Запись удалена, id: {record_id}")
+    result = collection.delete_one({"_id": ObjectId(record_id)})
+    
+    if result.deleted_count == 0:
+        raise ValueError(f"Запись с ID {record_id} не найдена")
+    else:
+        print(f"Запись удалена, id: {record_id}")
     
