@@ -3,10 +3,17 @@ from datetime import datetime
 from bson import ObjectId
 
 client = MongoClient("mongodb://localhost:27017/")
-db = client["audiototext"]
+db = client["audiototext_tests"]   # название БД
 collection = db["transcriptions"]
 
 def save_transcription(filename: str, extension: str, duration: float, char_count: int, text: str):
+
+    if not isinstance(duration, (int, float)):
+        raise ValueError("duration must be number")
+
+    if not isinstance(char_count, int):
+        raise ValueError("char_count must be int")
+
     record = {
         "filename": filename,
         "extension": extension,
@@ -15,8 +22,11 @@ def save_transcription(filename: str, extension: str, duration: float, char_coun
         "text": text,
         "created_at": datetime.now()
     }
+
     result = collection.insert_one(record)
+
     print(f"Сохранено в MongoDB, id: {result.inserted_id}")
+
     return str(result.inserted_id)
 
 def update_transcription(session_id: str, text: str, duration: float):
