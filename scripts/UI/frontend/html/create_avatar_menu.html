@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>CreateAvatar</title>
+
+    <link rel="icon" type="image/png" href="../../../../icons/img/smiles/micro_40.png">
+    <link rel="stylesheet" href="../css/create_avatar_menu.css">
+</head>
+
+<body>
+
+<div class="transcribe-app">
+
+    <!-- back -->
+    <button class="back-btn">
+        <img src="../../../../icons/back_arrow.svg" alt="back">
+    </button>
+
+    <!-- header -->
+    <div class="slogan-container">
+        <h1 class="slogan">Диктуя в микрофон - создайте себя!</h1>
+        <img class="audio-icon" src="../../../../icons/img/smiles/micro_40.png">
+    </div>
+
+    <!-- timer + record -->
+    <div class="file-row">
+        <input type="text" class="file-input info-field" placeholder="Нажмите кнопку записи">
+
+        <div class="timer">00:15:00</div>
+
+        <button class="record-btn">
+            <img src="../../../../icons/record_btn.svg" class="icon">
+        </button>
+    </div>
+
+    <!-- TEXT -->
+    <textarea class="text-field" readonly>
+Утренний город постепенно наполнялся движением, пока первые лучи солнца, пробиваясь сквозь лёгкую дымку, ложились на крыши домов и отражались в стеклянных фасадах зданий. Люди, спешащие по своим делам, не замечали, как вокруг них меняется атмосфера дня, становящаяся всё более насыщенной и живой.
+
+Птицы, кружившие над парком, изредка прерывали свой полёт, опускаясь на ветви деревьев, словно наблюдая за происходящим. Ветер, едва заметно касаясь листвы, создавал мягкий шелест, который, переплетаясь с городскими звуками, образовывал единый ритм утра.
+
+Проходя по улице, человек, задумчиво глядя перед собой, не спешил, позволяя мыслям свободно течь, возвращаясь к событиям прошедшего дня и одновременно планируя будущие шаги. В этот момент всё вокруг казалось более чётким и осмысленным, словно время, замедлившись, давало возможность увидеть детали, обычно ускользающие от внимания.
+
+И хотя город продолжал жить своей обычной жизнью, в каждом его движении ощущалась скрытая гармония, объединяющая людей, звуки и пространство в единое целое.
+    </textarea>
+
+</div>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <div>Ваш голос успешно записан!</div>
+        <div>Спасибо!</div>
+        <button class="modal-btn">Ок</button>
+    </div>
+</div>
+
+<script src="../js/create_avatar_script.js"></script>
+<script src="../js/back_btn_script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    font-family: Corbel, sans-serif;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(
+        135deg,
+        rgba(81, 0, 135, 1),
+        rgba(41, 61, 132, 0.92),
+        rgba(155, 79, 165, 1)
+    );
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transcribe-app {
+    width: 1100px;
+    height: 800px;
+    position: relative;
+    padding: 20px 30px;
+}
+
+/* HEADER */
+.slogan {
+    text-align: center;
+    font-size: 25pt;
+    font-weight: bold;
+}
+
+.slogan-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ROW */
+.file-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+/* INPUT */
+.file-input {
+    flex: 1;
+    padding: 12px 15px;
+    font-size: 14pt;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.3);
+    color: white;
+}
+
+/* TIMER */
+.timer {
+    font-size: 25pt;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+    font-family: monospace;
+    width: 160px;
+    text-align: center;
+}
+
+/* BUTTON */
+.record-btn {
+    width: 61px;
+    height: 61px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* TEXT */
+.text-field {
+    width: 100%;
+    height: 610px;
+    font-size: 17pt;
+    padding: 15px 15px;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    color: white;
+    resize: none;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+/* BACK */
+.back-btn {
+    position: absolute;
+    left: 10px;
+    width: 51px;
+    height: 51px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.3);
+    border: 1px solid rgba(255,255,255,0.4);
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.35s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: rgba(255,255,255,0.25);
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    padding: 30px 40px;
+    text-align: center;
+    font-size: 18pt;
+    color: white;
+    transform: scale(0.85);
+    transition: 0.35s ease;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.modal-btn {
+    margin-top: 15px;
+    padding: 12px 28px;
+    font-size: 14pt;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.4);
+    background: rgba(255,255,255,0.2);
+    color: white;
+    cursor: pointer;
+}

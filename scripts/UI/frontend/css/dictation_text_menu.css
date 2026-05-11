@@ -153,10 +153,12 @@ body {
 }
 
 .timer {
-    position: relative;
-    font-size: 25pt; 
-    font-weight: bold; 
-    color: white; 
+    font-size: 25pt;
+    font-weight: bold;
+    font-variant-numeric: tabular-nums;
+    font-family: monospace;
+    width: 160px;
+    text-align: center;
 }
 
 .record-btn {
