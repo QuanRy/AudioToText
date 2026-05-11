@@ -24,7 +24,7 @@ def clear_db():
 def test_full_module_flow():
     """
     Полный сценарий работы модуля:
-    создание -> обновление -> удаление
+    создание - обновление - удаление
     """
 
     record_id = save_transcription(
