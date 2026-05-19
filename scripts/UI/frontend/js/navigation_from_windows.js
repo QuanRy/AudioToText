@@ -17,13 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 case 1: // "Записать"
                     window.location.href = 'dictation_text_menu.html';
                     break;
-                case 2: // "История"
+                case 2: // "Профиль"
                     window.location.href = 'history_menu.html';
                     break;
-                case 3: // "Профиль"
-                    window.location.href = 'create_avatar_menu.html';
-                    break;
-                case 4: // "О программе?"
+                case 3: // "О программе?"
                     window.location.href = 'info_menu.html';
                     break;
             }

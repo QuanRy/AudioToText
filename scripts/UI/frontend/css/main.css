@@ -93,7 +93,7 @@ body {
     background: rgba(255, 255, 255, 0.18); /* ✔ корректная прозрачность */
     backdrop-filter: blur(4px);
 
-    border: none;               /* ❌ убрали рамку */
+    border: none;               
     border-radius: 22px;
 
     cursor: pointer;
