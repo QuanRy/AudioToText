@@ -208,14 +208,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ─── Модальное окно ─────────────────────────────────────────
     function showModal(avatarName) {
-        const msgEl = modal.querySelector('div > div:first-child');
-        if (msgEl) msgEl.textContent = `Аватар «${avatarName}» успешно создан!`;
+        const lines = modal.querySelectorAll('.modal-content div');
+        if (lines[0]) lines[0].textContent = `Голосовой профиль создан!`;
+        if (lines[1]) lines[1].textContent = `Ваш аватар: ${avatarName}`;
 
         modal.classList.add("show");
 
         const close = () => modal.classList.remove("show");
         okBtn.onclick = close;
-        setTimeout(close, 3000);
+        setTimeout(close, 2000);
     }
 
     // ─── Сброс при закрытии страницы ────────────────────────────
