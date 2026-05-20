@@ -85,4 +85,65 @@ def delete_history_record(record_id: str):
         raise ValueError(f"Запись с ID {record_id} не найдена")
     else:
         print(f"Запись удалена, id: {record_id}")
-    
+
+
+# ──────────────────────────────────────────────────────────────
+#  Таблица - Цифровые аватары
+# ──────────────────────────────────────────────────────────────
+
+avatars_col = db["digital_avatars"]
+
+def save_avatar(name: str, embedding: list, char_count: int) -> str:
+    """Сохраняет голосовой профиль аватара. Возвращает строковый ID."""
+    doc = {
+        "name":        name,
+        "voice":       "recorded",
+        "language":    "ru",
+        "embedding":   embedding,        # список из 256 float
+        "char_count":  char_count,       # кол-во PCM-сэмплов
+        "description": "",
+        "created_at":  datetime.now(),
+        "updated_at":  datetime.now(),
+    }
+    result = avatars_col.insert_one(doc)
+    print(f"Аватар сохранён в MongoDB, id: {result.inserted_id}")
+    return str(result.inserted_id)
+
+
+def get_avatars() -> list:
+    """Возвращает список всех аватаров (без эмбеддинга — он большой)."""
+    records = []
+    for doc in avatars_col.find().sort("created_at", -1):
+        records.append({
+            "id":          str(doc["_id"]),
+            "name":        doc.get("name", ""),
+            "voice":       doc.get("voice", ""),
+            "language":    doc.get("language", ""),
+            "char_count":  doc.get("char_count", 0),
+            "description": doc.get("description", ""),
+            "created_at":  doc["created_at"].isoformat() if doc.get("created_at") else None,
+            "updated_at":  doc["updated_at"].isoformat() if doc.get("updated_at") else None,
+        })
+    return records
+
+
+def update_avatar_description(avatar_id: str, description: str):
+    """Обновляет описание аватара."""
+    result = avatars_col.update_one(
+        {"_id": ObjectId(avatar_id)},
+        {"$set": {
+            "description": description,
+            "updated_at":  datetime.now(),
+        }}
+    )
+    if result.matched_count == 0:
+        raise ValueError(f"Аватар с ID {avatar_id} не найден")
+    print(f"Описание аватара обновлено, id: {avatar_id}")
+
+
+def delete_avatar(avatar_id: str):
+    """Удаляет аватара из базы."""
+    result = avatars_col.delete_one({"_id": ObjectId(avatar_id)})
+    if result.deleted_count == 0:
+        raise ValueError(f"Аватар с ID {avatar_id} не найден")
+    print(f"Аватар удалён, id: {avatar_id}")

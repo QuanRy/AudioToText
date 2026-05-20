@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const loadAvatars = async () => {
         avatarList.innerHTML = '<div class="history-loading">Загрузка...</div>';
         try {
-            const res  = await fetch('http://127.0.0.1:8000/avatars');
+            const res  = await fetch('http://127.0.0.1:9000/avatars');
             const data = await res.json();
 
             if (!data.records || data.records.length === 0) {
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     modalSave.addEventListener('click', async () => {
         if (!currentId) return;
         try {
-            await fetch(`http://127.0.0.1:8000/avatars/${currentId}`, {
+            await fetch(`http://127.0.0.1:9000/avatars/${currentId}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ description: modalDesc.value })
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     confirmYes.addEventListener('click', async () => {
         if (!currentId) return;
         try {
-            await fetch(`http://127.0.0.1:8000/avatars/${currentId}`, {
+            await fetch(`http://127.0.0.1:9000/avatars/${currentId}`, {
                 method: 'DELETE'
             });
             confirmOverlay.classList.remove('active');

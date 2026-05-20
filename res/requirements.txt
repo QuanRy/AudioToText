@@ -10,3 +10,5 @@ uvicorn
 python-multipart
 pymongo
 pytest
+webrtcvad-wheels
+resemblyzer 
