@@ -19,8 +19,8 @@ body {
 }
 
 .info-app {
-    width: 679px;
-    height: 679px;
+    width: 979px;
+    height: 939px;
     position: relative;
     padding: 20px 30px;
 }
@@ -28,7 +28,7 @@ body {
 /* Кнопка назад */
 .back-btn {
     position: absolute;
-    /* top: 10px; */
+    top: 48px;
     left: 10px;
     width: 51px;
     height: 51px;
